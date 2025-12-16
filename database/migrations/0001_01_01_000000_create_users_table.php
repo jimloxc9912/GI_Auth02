@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create(table: 'users', callback: function (Blueprint $table): void {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string(column: 'name');
+            $table->string(column: 'email')->unique();
+            $table->timestamp(column: 'email_verified_at')->nullable();
+            $table->string(column: 'password')->nullable();//se configura nullable
+            $table->string(column: 'google_id')->nullable();//se agrega campo, nulleablе
             $table->rememberToken();
             $table->timestamps();
         });
