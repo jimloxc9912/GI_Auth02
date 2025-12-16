@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'google' => [
+        'client_id' => env(key:'GOOGLE_CLIENT_ID'),
+        'client_secret' => env(key: 'GOOGLE_CLIENT_SECRET'),
+        'redirect' => 'http://projectauth.com/google-auth/callback',
+    ],
+
 ];
